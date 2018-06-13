@@ -11,8 +11,12 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 
+/**
+ * BaseActivity showcases abstraction of app logic. Also changes text after 10 seconds-don't miss it ;)
+ */
 public class BaseActivity extends BaseButterKnifeBoundActivity implements GranularLifecycle.VerboseLoggable {
 
+    // To showcase abstracted functionality.
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
@@ -54,6 +58,7 @@ public class BaseActivity extends BaseButterKnifeBoundActivity implements Granul
     public void onPostBindCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onPostBindCreate(savedInstanceState, persistentState);
         setSupportActionBar(toolbar);
+        setTitle(getTitle() +" : " + getClass().getSimpleName());
         setupCommonUi();
         conditionalSetup();
         setupOneTimeTextChange();
@@ -62,8 +67,8 @@ public class BaseActivity extends BaseButterKnifeBoundActivity implements Granul
     private void conditionalSetup() {
         verboseLogging("conditionalSetup called. activityATextView[" + activityATextView + "]. Attempting to append text...");
         if (activityATextView != null) {
-            // To show you that i COULD also modify it here too
-            activityATextView.append(", modified by BaseActivity");
+            // To show you that we could initialize here
+            activityATextView.append("initialized by BaseActivity");
         } else {
             verboseLogging(" .. could not append text!");
         }

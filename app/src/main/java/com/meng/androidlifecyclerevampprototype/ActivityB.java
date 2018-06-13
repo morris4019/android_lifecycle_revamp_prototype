@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 
+/**
+ * ActivityB is to showcase the "common textview".
+ */
 public class ActivityB extends BaseActivity {
 
     @BindView(R.id.common_textview)

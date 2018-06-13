@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/toolbar">
-    <RelativeLayout
+    android:orientation="vertical"
+    tools:context=".ActivityB">
+
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ActivityB">
+        android:background="?attr/colorPrimary"
+        android:layout_height="58dp"
+        android:id="@+id/toolbar"/>
 
         <Button
             android:id="@+id/button1"
@@ -28,5 +32,4 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </RelativeLayout>
-</android.support.v7.widget.Toolbar>
+</LinearLayout>

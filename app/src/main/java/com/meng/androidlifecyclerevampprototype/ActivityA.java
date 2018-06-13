@@ -10,17 +10,23 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 
+/**
+ * ActivityA is a small showcase of an activity, in the inheritance chain, which has both a common
+ * and unique UI element.
+ */
 public class ActivityA extends BaseActivity{
 
+    // "Common" here refers to us specifically using it in multiple views-it's just a name.
     @BindView(R.id.common_textview)
     TextView commonTextView;
 
+    // This textview is ONLY within the ActivityA layout.
     @BindView(R.id.activity_a_textview)
     TextView activityATextView;
 
+    // Used to link to ActivityB.
     @BindView(R.id.button2)
     Button button2;
-
 
     @Override
     public int onRequestContentView(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
@@ -31,6 +37,7 @@ public class ActivityA extends BaseActivity{
     @Override
     public void onPreBindCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onPreBindCreate(savedInstanceState, persistentState);
+        // No-op
     }
 
     @Override
